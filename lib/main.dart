@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:latihan_4/bottommenu/bottommenu%20copy/bottommenu.dart';
 import 'package:latihan_4/confirmationpage.dart';
 import 'package:latihan_4/errorpage.dart';
 import 'package:latihan_4/homepage1.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Splash(),
+      home: Bottommenu(),
     );
   }
 }

@@ -16,12 +16,13 @@ class CategorySelect extends StatelessWidget {
           child: Text(
             title,
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
+            style:
+                TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
           ),
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
-          color: Colors.indigo[200],
+          borderRadius: BorderRadius.circular(35),
+          color: Colors.grey.shade200,
         ),
       ),
     );
