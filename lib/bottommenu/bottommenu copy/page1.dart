@@ -136,7 +136,7 @@ class _OneState extends State<One> {
                       child: Column(
                         children: [
                           SizedBox(
-                            height: 300,
+                            height: 200,
                             child: ListView.builder(
                                 itemCount: 15,
                                 scrollDirection: Axis.horizontal,

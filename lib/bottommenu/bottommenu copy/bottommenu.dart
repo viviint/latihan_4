@@ -14,7 +14,7 @@ class Bottommenu extends StatefulWidget {
 
 class _BottommenuState extends State<Bottommenu> {
   int currentIndex = 0;
-  final List<Widget> body = [One(), Two(), Three()];
+  final List<Widget> body = [One(), SearcH(), Library()];
 
   @override
   Widget build(BuildContext context) {
