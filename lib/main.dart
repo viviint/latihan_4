@@ -6,7 +6,9 @@ import 'package:latihan_4/errorpage.dart';
 import 'package:latihan_4/homepage1.dart';
 import 'package:latihan_4/loginpage.dart';
 import 'package:latihan_4/personalization.dart';
+import 'package:latihan_4/profilepage.dart';
 import 'package:latihan_4/releasepage.dart';
+import 'package:latihan_4/settingspage.dart';
 import 'package:latihan_4/signuppage.dart';
 import 'package:latihan_4/splashscreen.dart';
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Bottommenu(),
+      home: Profileview(),
     );
   }
 }

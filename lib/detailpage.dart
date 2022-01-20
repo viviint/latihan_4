@@ -14,8 +14,16 @@ class _DetailState extends State<Detail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-      title: Text('1'),
-      leading: Icon(Icons.arrow_back_ios),
+      title: Text(
+        'Little red',
+        style: TextStyle(color: Colors.black),
+      ),
+      backgroundColor: Colors.white,
+      shadowColor: Colors.transparent,
+      leading: Icon(
+        Icons.arrow_back_ios,
+        color: Colors.black,
+      ),
     ));
   }
 }

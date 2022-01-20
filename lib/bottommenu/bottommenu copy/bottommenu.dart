@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:latihan_4/bottommenu/bottommenu%20copy/page1.dart';
 import 'package:latihan_4/bottommenu/bottommenu%20copy/page2.dart';
 import 'package:latihan_4/bottommenu/bottommenu%20copy/page3.dart';
+import 'package:latihan_4/settingspage.dart';
 
 class Bottommenu extends StatefulWidget {
   const Bottommenu({Key? key}) : super(key: key);
@@ -38,15 +39,21 @@ class _BottommenuState extends State<Bottommenu> {
               ),
             ),
             onPressed: () {}),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 27),
-            child: Icon(
-              Icons.settings,
-              color: Colors.black,
-              size: 30,
+        actions: [
+          GestureDetector(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 27),
+              child: Icon(
+                Icons.settings,
+                color: Colors.black,
+                size: 30,
+              ),
             ),
-          )
+            onTap: () {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (BuildContext context) => Setting()));
+            },
+          ),
         ],
       ),
       body: body[currentIndex],
