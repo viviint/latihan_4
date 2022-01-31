@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:latihan_4/bottommenu/bottommenu%20copy/bottommenu.dart';
 import 'package:latihan_4/profilepage.dart';
 
 class Setting extends StatefulWidget {
@@ -21,9 +22,14 @@ class _SettingState extends State<Setting> {
             style: TextStyle(color: Colors.black),
           ),
           shadowColor: Colors.transparent,
-          leading: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
+          leading: GestureDetector(
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
+            onTap: () {
+              Get.to(Bottommenu());
+            },
           ),
         ),
         body: Column(children: [

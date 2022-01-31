@@ -44,15 +44,18 @@ class _LibraryState extends State<Library> {
           ),
           Expanded(
               child: ListView.builder(
-                  itemCount: listbooks.length,
+                  itemCount: BooksModel.booksmodel.length,
                   itemBuilder: (context, index) {
-                    BooksModel booksModel = listbooks[index];
+                    BooksModel booksModel = BooksModel.booksmodel[index];
                     return GestureDetector(
-                      onTap: () => Get.to(Detail(detail: listbooks[index])),
+                      onTap: () => Get.to(Detail(idBook: booksModel.id)),
                       child: Card(
+                        margin: EdgeInsets.symmetric(vertical: 10),
                         shadowColor: Colors.transparent,
                         child: ListTile(
-                          leading: Image.network(booksModel.image),
+                          leading: Image.network(
+                            booksModel.image,
+                          ),
                           title: Text(booksModel.title),
                           subtitle: Text(booksModel.subtitle),
                         ),

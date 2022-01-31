@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:latihan_4/bottommenu/components/latestcomponent.dart';
+import 'package:latihan_4/controller/bookscontroller.dart';
 import 'package:latihan_4/controller/recommendcontroller.dart';
+import 'package:latihan_4/detailpage.dart';
+import 'package:latihan_4/model/booksmodel.dart';
 import 'package:latihan_4/widget/recommendselect.dart';
 
 class SearcH extends StatefulWidget {
@@ -13,6 +17,20 @@ class SearcH extends StatefulWidget {
 
 class _SearcHState extends State<SearcH> {
   final _formKey = GlobalKey<FormState>();
+  Widget latestSearch() {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+          children: BooksModel.booksmodel
+              .asMap()
+              .entries
+              .map((MapEntry map) =>
+                  LatestSearch(infoo: BooksModel.booksmodel[map.key]))
+              .toList()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,29 +97,7 @@ class _SearcHState extends State<SearcH> {
                   ),
                 )
               ])),
-          Padding(
-            padding: const EdgeInsets.only(left: 18),
-            child: Container(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 225,
-                      child: ListView.builder(
-                          itemCount: 5,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) => Container(
-                                width: 200,
-                                margin: EdgeInsets.all(10),
-                                child: Center(),
-                                color: Colors.grey.shade300,
-                              )),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
+          latestSearch()
         ],
       ),
     );

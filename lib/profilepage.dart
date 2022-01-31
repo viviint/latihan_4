@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:latihan_4/settingspage.dart';
 
 class Profileview extends StatefulWidget {
   const Profileview({Key? key}) : super(key: key);
@@ -18,9 +20,14 @@ class _ProfileviewState extends State<Profileview> {
         toolbarHeight: 90,
         backgroundColor: Colors.white,
         shadowColor: Colors.transparent,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: GestureDetector(
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+          onTap: () {
+            Get.to(Setting());
+          },
         ),
         title: Text(
           'Profile',

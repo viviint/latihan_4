@@ -66,7 +66,7 @@ class _ForgetpasswordState extends State<Forgetpassword> {
                   ),
                   validator: (value) {
                     if (value!.isAlphabetOnly) {
-                      return "tidak boleh kosong ";
+                      return "wrong email/phone number";
                     } else {}
                     return null;
                   },
