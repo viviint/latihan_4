@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan_4/bottommenu/bottommenu%20copy/bottommenu.dart';
+import 'package:latihan_4/bottommenu/bottommenu%20copy/page1.dart';
 import 'package:latihan_4/bottommenu/bottommenu%20copy/page2.dart';
 import 'package:latihan_4/bottommenu/bottommenu%20copy/page3.dart';
 import 'package:latihan_4/confirmationpage.dart';
@@ -8,6 +9,7 @@ import 'package:latihan_4/detailpage.dart';
 import 'package:latihan_4/errorpage.dart';
 import 'package:latihan_4/homepage1.dart';
 import 'package:latihan_4/loginpage.dart';
+import 'package:latihan_4/pages/login/web_login.dart';
 import 'package:latihan_4/personalization.dart';
 import 'package:latihan_4/profilepage.dart';
 import 'package:latihan_4/releasepage.dart';
@@ -16,6 +18,7 @@ import 'package:latihan_4/signuppage.dart';
 import 'package:latihan_4/splashscreen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -29,7 +32,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Bottommenu(),
+      getPages: [
+        GetPage(name: "/dashboard", page: () => One()),
+        GetPage(name: "/introduction", page: () => Home()),
+        GetPage(name: "/loginn", page: () => WebLogin())
+      ],
+      home: Splash(),
       // routes: {Detail.nameRoute :(context) => Detail()},
     );
   }

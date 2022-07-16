@@ -15,6 +15,7 @@ class _SettingState extends State<Setting> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          toolbarHeight: 70,
           backgroundColor: Colors.white,
           centerTitle: true,
           title: Text(
@@ -38,8 +39,8 @@ class _SettingState extends State<Setting> {
               Padding(
                 padding: const EdgeInsets.all(25),
                 child: Container(
-                  width: 100,
-                  height: 100,
+                  width: 95,
+                  height: 95,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
@@ -51,6 +52,7 @@ class _SettingState extends State<Setting> {
               Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Shoto Todoroki", style: TextStyle(fontSize: 18)),
                     SizedBox(
@@ -77,11 +79,13 @@ class _SettingState extends State<Setting> {
               Padding(
                 padding: const EdgeInsets.all(25),
                 child: Column(
-                  children: [
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
                     Text('Notifications'),
                     SizedBox(
                       height: 15,
                     ),
+                    Divider(),
                     Text('Data and Storages')
                   ],
                 ),
@@ -98,11 +102,13 @@ class _SettingState extends State<Setting> {
               Padding(
                 padding: const EdgeInsets.all(25),
                 child: Column(
-                  children: [
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
                     Text('Subscription'),
                     SizedBox(
                       height: 15,
                     ),
+                    Divider(),
                     Text('Linked Account')
                   ],
                 ),
@@ -121,6 +127,9 @@ class _SettingState extends State<Setting> {
                 child: Text('About Audiobooks'),
               ),
             ],
+          ),
+          SizedBox(
+            height: 17,
           ),
           ButtonTheme(
             minWidth: 300,

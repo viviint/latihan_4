@@ -8,8 +8,14 @@ class HomeON extends StatelessWidget {
   final String title;
   final String subtitle;
   final int index;
+  final Function()? onTap;
 
-  HomeON({this.imge = "", this.title = "", this.subtitle = "", this.index = 0});
+  HomeON(
+      {this.imge = "",
+      this.title = "",
+      this.subtitle = "",
+      this.index = 0,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +91,7 @@ class HomeON extends StatelessWidget {
                     color: Colors.indigo.shade700,
                     textColor: Colors.white,
                     child: const Text("Next", style: TextStyle(fontSize: 20)),
-                    onPressed: () {},
+                    onPressed: onTap,
                   ),
                 ),
               ],
@@ -108,9 +114,7 @@ class HomeON extends StatelessWidget {
                     textColor: Colors.white,
                     child: const Text("Lets Get Started",
                         style: TextStyle(fontSize: 20)),
-                    onPressed: () {
-                      Get.to(ErroR());
-                    },
+                    onPressed: onTap,
                   ),
                 ),
               ],

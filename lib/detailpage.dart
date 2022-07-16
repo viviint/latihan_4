@@ -32,7 +32,7 @@ class Detail extends StatelessWidget {
             color: Colors.black,
           ),
           onTap: () {
-            Get.to(Bottommenu());
+            Get.back();
           },
         ),
       ),
@@ -45,32 +45,38 @@ class Detail extends StatelessWidget {
               child: Image.network("${selectedData.image}"),
             ),
           ),
+          SizedBox(
+            height: 17,
+          ),
           Padding(
-            padding: const EdgeInsets.all(15),
-            child: Center(
-              child: Text(
-                "${selectedData.title}",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
-              ),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "${selectedData.title}",
+                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Text(
+                  "${selectedData.subtitle}",
+                  style: TextStyle(fontSize: 17),
+                ),
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 25),
-            child: Row(children: [
-              Text(
-                "${selectedData.subtitle}",
-              ),
-            ]),
+          SizedBox(
+            height: 7,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25),
+          Center(
             child: RatingBar.builder(
               initialRating: selectedData.rating,
               minRating: 1,
               direction: Axis.horizontal,
               allowHalfRating: true,
               itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
               itemBuilder: (context, _) => Icon(
                 Icons.star,
                 color: Colors.amber,

@@ -21,21 +21,21 @@ class _ProfileviewState extends State<Profileview> {
         backgroundColor: Colors.white,
         shadowColor: Colors.transparent,
         leading: GestureDetector(
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_ios,
             color: Colors.black,
           ),
           onTap: () {
-            Get.to(Setting());
+            Get.back();
           },
         ),
-        title: Text(
+        title: const Text(
           'Profile',
           style: TextStyle(color: Colors.black),
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 25, top: 34),
+            padding: EdgeInsets.only(right: 25, top: 34),
             child: Text(
               'Save',
               style: TextStyle(color: Colors.indigo, fontSize: 18),
@@ -45,6 +45,7 @@ class _ProfileviewState extends State<Profileview> {
       ),
       body: Column(
         children: [
+          const Divider(),
           Padding(
             padding: const EdgeInsets.all(30),
             child: Center(
@@ -53,87 +54,89 @@ class _ProfileviewState extends State<Profileview> {
                 width: 160,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(image: AssetImage(''))),
+                    image: const DecorationImage(
+                        image: AssetImage('assets/todo.jpg'))),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(27),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 27, right: 45),
-                  child: Text(
-                    'Display Namme',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                ),
-                Text(''),
-              ],
-            ),
+          const SizedBox(
+            height: 17,
           ),
           Padding(
-            padding: const EdgeInsets.all(27),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 27, right: 45),
-                  child: Text(
-                    'Username',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                SizedBox(
+                  height: 45,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Display Namme',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      Text('Todoroki Shoto'),
+                    ],
                   ),
                 ),
-                Text(''),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(27),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 27, right: 45),
-                  child: Text(
-                    'Email',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                const Divider(),
+                SizedBox(
+                  height: 45,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Username',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      Text('Shoto'),
+                    ],
                   ),
                 ),
-                Text('your@gmail.com'),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(27),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 27, right: 45),
-                  child: Text(
-                    'Phone',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                const Divider(),
+                SizedBox(
+                  height: 45,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Email',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      Text('your@gmail.com'),
+                    ],
                   ),
                 ),
-                Text('+12345665432'),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(27),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 27, right: 45),
-                  child: Text(
-                    'Date Birth',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                const Divider(),
+                SizedBox(
+                  height: 45,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Phone',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      Text('+12345665432'),
+                    ],
                   ),
                 ),
-                Text(''),
+                const Divider(),
+                Container(
+                  height: 45,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Date Birth',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      Text(''),
+                    ],
+                  ),
+                ),
+                const Divider()
               ],
             ),
           ),

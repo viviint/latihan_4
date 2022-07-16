@@ -1,20 +1,24 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:latihan_4/widget/homeonboard.dart';
 
 class Home extends StatefulWidget {
+  int _pageIndex = 0;
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
   List<Widget> pages = [];
-  int _pageIndex = 0;
+
   late PageController pageController;
 
   @override
   void initState() {
     super.initState();
-    pageController = PageController(initialPage: _pageIndex);
+    pageController = PageController(initialPage: widget._pageIndex);
   }
 
   @override
@@ -25,18 +29,35 @@ class _HomeState extends State<Home> {
         subtitle: "Lorem ipsum dolor sit amet la maryame dor sut colondeum",
         imge: "assets/firstpage.png",
         index: 0,
+        onTap: () {
+          setState(() {
+            pageController.animateToPage(pageController.page!.toInt() + 1,
+                duration: Duration(milliseconds: 400), curve: Curves.easeIn);
+          });
+        },
       ),
       HomeON(
         title: "Tittle Two",
         subtitle: "Lorem ipsum dolor sit amet la maryame dor sut colondeum",
         imge: "assets/secondpage.png",
         index: 1,
+        onTap: () {
+          setState(() {
+            setState(() {
+              pageController.animateToPage(pageController.page!.toInt() + 1,
+                  duration: Duration(milliseconds: 400), curve: Curves.easeIn);
+            });
+          });
+        },
       ),
       HomeON(
         title: "Tittle Three",
         subtitle: "Lorem ipsum dolor sit amet la maryame dor sut colondeum",
         imge: "assets/thirdpage.png",
         index: 2,
+        onTap: () {
+          Get.offNamed("/loginn");
+        },
       )
     ];
     return Scaffold(
@@ -47,9 +68,8 @@ class _HomeState extends State<Home> {
             controller: pageController,
             onPageChanged: (value) {
               setState(() {
-                _pageIndex = value;
-
-                if (_pageIndex < pages.length) {}
+                widget._pageIndex = value;
+                if (widget._pageIndex < pages.length) {}
               });
             },
             children: pages,

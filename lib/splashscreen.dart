@@ -15,7 +15,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   next() {
     Future.delayed(Duration(seconds: 4), () async {
-      Get.to(() => Home());
+      Get.toNamed("introduction");
     });
   }
 
@@ -32,14 +32,8 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Center(
-            child: Image.asset('assets/circlelogo.png'),
-          )
-        ],
-      ),
-    );
+        body: Center(
+      child: Image.asset('assets/circlelogo.png'),
+    ));
   }
 }

@@ -19,15 +19,20 @@ class _ReleaSeState extends State<ReleaSe> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        shadowColor: Colors.transparent,
         centerTitle: true,
         title: Text(
           "New Releases",
           style: TextStyle(color: Colors.black),
         ),
-        leading: Icon(
-          Icons.arrow_back_ios_new_sharp,
-          color: Colors.black,
-        ),
+        leading: GestureDetector(
+            child: Icon(
+              Icons.arrow_back_ios_new_sharp,
+              color: Colors.black,
+            ),
+            onTap: () {
+              Get.back();
+            }),
         toolbarHeight: 90,
       ),
       body: Column(

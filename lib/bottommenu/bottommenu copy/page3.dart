@@ -32,7 +32,7 @@ class _LibraryState extends State<Library> {
           Form(
             key: _formKey,
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               child: TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
@@ -50,7 +50,7 @@ class _LibraryState extends State<Library> {
                     return GestureDetector(
                       onTap: () => Get.to(Detail(idBook: booksModel.id)),
                       child: Card(
-                        margin: EdgeInsets.symmetric(vertical: 10),
+                        margin: EdgeInsets.symmetric(vertical: 20),
                         shadowColor: Colors.transparent,
                         child: ListTile(
                           leading: Image.network(
