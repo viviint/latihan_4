@@ -30,7 +30,7 @@ class _ReadyState extends State<Ready> {
                 child: Text(
                   "You are ready to go",
                   style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 18,
                       color: Colors.black,
                       fontWeight: FontWeight.w700),
                 ),
@@ -50,18 +50,20 @@ class _ReadyState extends State<Ready> {
             height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: ButtonTheme(
-              minWidth: 500,
-              height: 60,
+              minWidth: 400,
+              height: 67,
               // ignore: deprecated_member_use
               child: FlatButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
-                    side: BorderSide(color: Colors.indigo.shade700)),
-                color: Colors.indigo.shade700,
+                    side: BorderSide(color: Colors.indigo)),
+                color: Colors.indigo,
                 textColor: Colors.white,
-                child: const Text("Finish", style: TextStyle(fontSize: 15)),
+                child: const Text("Finish",
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   {
                     Get.to(Loading());

@@ -2,7 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan_4/homepage1.dart';
-import 'package:latihan_4/loginpage.dart';
+import 'package:latihan_4/pages/login/web_login.dart';
+
 import 'package:latihan_4/signuppage.dart';
 import 'package:latihan_4/splashscreen.dart';
 
@@ -68,7 +69,7 @@ class _ErroRState extends State<ErroR> {
               textColor: Colors.indigo,
               child: Text("Retry", style: TextStyle(fontSize: 15)),
               onPressed: () {
-                Get.offAll(Login());
+                Get.offAll(WebLogin());
               },
             ),
           )

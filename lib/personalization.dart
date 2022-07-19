@@ -31,7 +31,7 @@ class _PersonaLState extends State<PersonaL> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: RichText(
               overflow: TextOverflow.clip,
               maxLines: 2,
@@ -66,7 +66,7 @@ class _PersonaLState extends State<PersonaL> {
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "tidak boleh kosong ";
-                  } else {}
+                  }
                   return null;
                 },
               ),
@@ -93,11 +93,13 @@ class _PersonaLState extends State<PersonaL> {
               height: 70,
               child: FlatButton(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: BorderSide(color: Colors.indigo.shade700)),
-                color: Colors.indigo.shade700,
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(color: Colors.indigo)),
+                color: Colors.indigo,
                 textColor: Colors.white,
-                child: const Text("Submit", style: TextStyle(fontSize: 15)),
+                child: const Text("Submit",
+                    style:
+                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   Get.to(Ready());
                 },
@@ -105,17 +107,19 @@ class _PersonaLState extends State<PersonaL> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ButtonTheme(
               minWidth: 500,
               height: 70,
               child: FlatButton(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(10),
                     side: BorderSide(color: Colors.indigo)),
                 color: Colors.white,
                 textColor: Colors.indigo,
-                child: const Text("Skip", style: TextStyle(fontSize: 15)),
+                child: const Text("Skip",
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     Get.to(Ready());

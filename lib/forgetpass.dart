@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan_4/forgetpass2.dart';
-import 'package:latihan_4/loginpage.dart';
-import 'package:latihan_4/welcomepage.dart';
+
+import 'package:latihan_4/pages/login/web_login.dart';
 
 class Forgetpassword extends StatefulWidget {
   const Forgetpassword({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _ForgetpasswordState extends State<Forgetpassword> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(20),
               child: Container(
                 height: MediaQuery.of(context).size.height / 5,
                 decoration: const BoxDecoration(
@@ -33,16 +33,19 @@ class _ForgetpasswordState extends State<Forgetpassword> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: const [
                 Padding(
-                  padding: EdgeInsets.only(left: 21, bottom: 7),
+                  padding: EdgeInsets.only(left: 30),
                   child: Text(
                     "Forget Password",
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 )
               ],
             ),
+            SizedBox(
+              height: 11,
+            ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: RichText(
                   maxLines: 3,
                   overflow: TextOverflow.clip,
@@ -50,24 +53,28 @@ class _ForgetpasswordState extends State<Forgetpassword> {
                     TextSpan(
                         text:
                             "Please fill email or phone number and we'll send you a link to get back into your account.",
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        style: TextStyle(fontSize: 16, color: Colors.black)),
                   ])),
+            ),
+            SizedBox(
+              height: 11,
             ),
             Form(
               key: _formkey,
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 14, left: 20, right: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     labelText: "Email/Phone Number",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8)),
                   ),
                   validator: (value) {
-                    if (value!.isAlphabetOnly) {
-                      return "wrong email/phone number";
-                    } else {}
+                    if (value!.isEmpty) {
+                      return "must be filled";
+                    }
+                    if (value.isAlphabetOnly) {
+                      return "Wrong Email ";
+                    }
                     return null;
                   },
                 ),
@@ -82,10 +89,12 @@ class _ForgetpasswordState extends State<Forgetpassword> {
                 child: FlatButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      side: BorderSide(color: Colors.indigo.shade700)),
-                  color: Colors.indigo.shade700,
+                      side: BorderSide(color: Colors.indigo)),
+                  color: Colors.indigo,
                   textColor: Colors.white,
-                  child: const Text("Submit", style: TextStyle(fontSize: 15)),
+                  child: const Text("Submit",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   onPressed: () {
                     if (_formkey.currentState!.validate()) {
                       Get.to(Sent());
@@ -95,7 +104,7 @@ class _ForgetpasswordState extends State<Forgetpassword> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ButtonTheme(
                 minWidth: 500,
                 height: 70,
@@ -106,10 +115,12 @@ class _ForgetpasswordState extends State<Forgetpassword> {
                       side: BorderSide(color: Colors.indigo)),
                   color: Colors.white,
                   textColor: Colors.indigo,
-                  child: const Text("Cancel", style: TextStyle(fontSize: 15)),
+                  child: const Text("Cancel",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   onPressed: () {
                     {
-                      Get.to(Login());
+                      Get.to(WebLogin());
                     }
                   },
                 ),

@@ -16,7 +16,7 @@ class _SentState extends State<Sent> {
       body: SafeArea(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20),
           child: Container(
             height: MediaQuery.of(context).size.height / 5,
             decoration: const BoxDecoration(
@@ -28,16 +28,19 @@ class _SentState extends State<Sent> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
             Padding(
-              padding: EdgeInsets.only(left: 21, bottom: 7),
+              padding: EdgeInsets.symmetric(horizontal: 30),
               child: Text(
                 "Email Sent",
-                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             )
           ],
         ),
+        SizedBox(
+          height: 11,
+        ),
         Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: RichText(
               maxLines: 2,
               overflow: TextOverflow.clip,
@@ -56,8 +59,11 @@ class _SentState extends State<Sent> {
                     style: TextStyle(fontSize: 15, color: Colors.black))
               ])),
         ),
+        SizedBox(
+          height: 11,
+        ),
         Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: ButtonTheme(
             minWidth: 500,
             height: 70,
@@ -68,7 +74,8 @@ class _SentState extends State<Sent> {
                   side: BorderSide(color: Colors.indigo)),
               color: Colors.white,
               textColor: Colors.indigo,
-              child: const Text("Close", style: TextStyle(fontSize: 15)),
+              child: const Text("Close",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               onPressed: () {
                 Get.to(Welcome());
               },

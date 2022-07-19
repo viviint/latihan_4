@@ -8,7 +8,6 @@ import 'package:latihan_4/confirmationpage.dart';
 import 'package:latihan_4/detailpage.dart';
 import 'package:latihan_4/errorpage.dart';
 import 'package:latihan_4/homepage1.dart';
-import 'package:latihan_4/loginpage.dart';
 import 'package:latihan_4/pages/login/web_login.dart';
 import 'package:latihan_4/personalization.dart';
 import 'package:latihan_4/profilepage.dart';

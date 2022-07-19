@@ -106,11 +106,12 @@ class _WelcomeState extends State<Welcome> {
               child: FlatButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
-                    side: BorderSide(color: Colors.indigo.shade700)),
-                color: Colors.indigo.shade700,
+                    side: BorderSide(color: Colors.indigo)),
+                color: Colors.indigo,
                 textColor: Colors.white,
                 child: const Text("Personalize Your Account",
-                    style: TextStyle(fontSize: 15)),
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   {
                     Get.to(PersonaL());
@@ -131,7 +132,9 @@ class _WelcomeState extends State<Welcome> {
                     side: BorderSide(color: Colors.indigo)),
                 color: Colors.white,
                 textColor: Colors.indigo,
-                child: const Text("Skip", style: TextStyle(fontSize: 15)),
+                child: const Text("Skip",
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   {
                     Get.to(Ready());

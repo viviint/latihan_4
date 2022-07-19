@@ -38,7 +38,7 @@ class HomeON extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Container(
             child: Text(
               subtitle,
@@ -47,78 +47,81 @@ class HomeON extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 8),
-          child: SmoothPageIndicator(
-            controller: pageController,
-            count: 3,
-            effect: ColorTransitionEffect(
-                dotColor: Colors.indigo,
-                activeDotColor: Colors.orange,
-                radius: 10,
-                dotHeight: 10,
-                dotWidth: 10),
-          ),
+        SizedBox(height: 36),
+        SmoothPageIndicator(
+          controller: pageController,
+          count: 3,
+          effect: ColorTransitionEffect(
+              dotColor: Colors.indigo,
+              activeDotColor: Colors.orange,
+              radius: 10,
+              dotHeight: 10,
+              dotWidth: 10),
         ),
         if (index < 2) ...[
-          Padding(
-            padding: const EdgeInsets.only(top: 25),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ButtonTheme(
-                  minWidth: 160,
-                  height: 65,
-                  child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        side: BorderSide(color: Colors.transparent)),
-                    color: Colors.white,
-                    textColor: Colors.indigo,
-                    child: Text("skip", style: TextStyle(fontSize: 20)),
-                    onPressed: () {
-                      Get.offAll(ErroR());
-                    },
-                  ),
+          SizedBox(
+            height: 36,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ButtonTheme(
+                minWidth: 160,
+                height: 68,
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.transparent)),
+                  color: Colors.white,
+                  textColor: Colors.indigo,
+                  child: Text("skip",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Get.offAll(ErroR());
+                  },
                 ),
-                ButtonTheme(
-                  minWidth: 160,
-                  height: 65,
-                  child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        side: BorderSide(color: Colors.indigo.shade700)),
-                    color: Colors.indigo.shade700,
-                    textColor: Colors.white,
-                    child: const Text("Next", style: TextStyle(fontSize: 20)),
-                    onPressed: onTap,
-                  ),
+              ),
+              ButtonTheme(
+                minWidth: 160,
+                height: 68,
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.indigo)),
+                  color: Colors.indigo,
+                  textColor: Colors.white,
+                  child: const Text("Next",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: onTap,
                 ),
-              ],
-            ),
+              ),
+            ],
           )
         ] else ...[
-          Padding(
-            padding: const EdgeInsets.only(top: 25),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ButtonTheme(
-                  minWidth: 160,
-                  height: 65,
-                  child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        side: BorderSide(color: Colors.indigo.shade700)),
-                    color: Colors.indigo.shade700,
-                    textColor: Colors.white,
-                    child: const Text("Lets Get Started",
-                        style: TextStyle(fontSize: 20)),
-                    onPressed: onTap,
-                  ),
+          SizedBox(
+            height: 35,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ButtonTheme(
+                minWidth: 300,
+                height: 68,
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(color: Colors.indigo)),
+                  color: Colors.indigo,
+                  textColor: Colors.white,
+                  child: const Text("Lets Get Started",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  onPressed: onTap,
                 ),
-              ],
-            ),
+              ),
+            ],
           )
         ]
       ],
