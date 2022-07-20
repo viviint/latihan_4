@@ -60,15 +60,9 @@ class _PersonaLState extends State<PersonaL> {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: "Search Categories",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8)),
+                  // border: OutlineInputBorder(
+                  //     borderRadius: BorderRadius.circular(8)),
                 ),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "tidak boleh kosong ";
-                  }
-                  return null;
-                },
               ),
             ),
           ),
@@ -77,7 +71,7 @@ class _PersonaLState extends State<PersonaL> {
             child: GetBuilder<CategoryController>(builder: (cat) {
               return Wrap(
                 spacing: 0,
-                runSpacing: 6,
+                runSpacing: 3,
                 alignment: WrapAlignment.start,
                 children: List.generate(
                     cat.category.length,
@@ -86,8 +80,9 @@ class _PersonaLState extends State<PersonaL> {
               );
             }),
           ),
+          SizedBox(height: 25),
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: ButtonTheme(
               minWidth: 500,
               height: 70,
@@ -106,8 +101,11 @@ class _PersonaLState extends State<PersonaL> {
               ),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: ButtonTheme(
               minWidth: 500,
               height: 70,

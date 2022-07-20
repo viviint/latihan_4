@@ -253,7 +253,7 @@ class _WebLoginState extends State<WebLogin> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Don't have an accoun't ? ",
                       style: TextStyle(fontSize: 18),
                     ),
@@ -265,7 +265,7 @@ class _WebLoginState extends State<WebLogin> {
                       ),
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) => SignUp()));
+                            builder: (BuildContext context) => const SignUp()));
                       },
                     )
                   ],

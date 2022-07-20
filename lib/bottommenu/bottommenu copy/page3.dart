@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:latihan_4/controller/bookscontroller.dart';
 import 'package:latihan_4/detailpage.dart';
 import 'package:latihan_4/model/booksmodel.dart';
 
@@ -18,29 +17,36 @@ class _LibraryState extends State<Library> {
     return Scaffold(
       body: Column(
         children: [
+          const SizedBox(
+            height: 30,
+          ),
           Padding(
-            padding: const EdgeInsets.only(left: 25),
+            padding: const EdgeInsets.only(left: 30),
             child: Row(
-              children: [
+              children: const [
                 Text(
                   "My Books",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
                 ),
               ],
             ),
           ),
-          Form(
-            key: _formKey,
-            child: Padding(
-              padding: const EdgeInsets.all(15),
+          const SizedBox(
+            height: 16,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Form(
+              key: _formKey,
               child: TextFormField(
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Search books or author",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8)),
                   )),
             ),
+          ),
+          const SizedBox(
+            height: 20,
           ),
           Expanded(
               child: ListView.builder(
@@ -50,7 +56,7 @@ class _LibraryState extends State<Library> {
                     return GestureDetector(
                       onTap: () => Get.to(Detail(idBook: booksModel.id)),
                       child: Card(
-                        margin: EdgeInsets.symmetric(vertical: 20),
+                        margin: EdgeInsets.symmetric(horizontal: 25),
                         shadowColor: Colors.transparent,
                         child: ListTile(
                           leading: Image.network(

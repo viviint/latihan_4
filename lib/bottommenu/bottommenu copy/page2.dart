@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan_4/bottommenu/components/latestcomponent.dart';
-import 'package:latihan_4/controller/bookscontroller.dart';
 import 'package:latihan_4/controller/recommendcontroller.dart';
-import 'package:latihan_4/detailpage.dart';
 import 'package:latihan_4/model/booksmodel.dart';
 import 'package:latihan_4/widget/recommendselect.dart';
 
@@ -20,7 +18,7 @@ class _SearcHState extends State<SearcH> {
   Widget latestSearch() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
           children: BooksModel.booksmodel
               .asMap()
@@ -36,10 +34,13 @@ class _SearcHState extends State<SearcH> {
     return Scaffold(
       body: Column(
         children: [
+          const SizedBox(
+            height: 30,
+          ),
           Row(
-            children: [
+            children: const [
               Padding(
-                padding: const EdgeInsets.only(left: 25),
+                padding: EdgeInsets.only(left: 30),
                 child: Text(
                   "Explore",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
@@ -47,36 +48,43 @@ class _SearcHState extends State<SearcH> {
               ),
             ],
           ),
-          Form(
-            key: _formKey,
-            child: Padding(
-              padding: const EdgeInsets.all(20),
+          SizedBox(
+            height: 16,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Form(
+              key: _formKey,
               child: TextFormField(
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Search books or author",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8)),
                   )),
             ),
           ),
+          const SizedBox(
+            height: 24,
+          ),
           Row(
-            children: [
+            children: const [
               Padding(
-                padding: const EdgeInsets.only(left: 25, top: 15, bottom: 25),
+                padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
                   "Recommended Categories",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               )
             ],
+          ),
+          const SizedBox(
+            height: 18,
           ),
           Align(
             alignment: Alignment.center,
             child: GetBuilder<RecommendController>(builder: (reco) {
               return Wrap(
                 spacing: 0,
-                runSpacing: 4,
+                runSpacing: 2,
                 alignment: WrapAlignment.start,
                 children: List.generate(
                     reco.recommend.length,
@@ -86,9 +94,12 @@ class _SearcHState extends State<SearcH> {
               );
             }),
           ),
+          const SizedBox(
+            height: 25,
+          ),
           Padding(
-              padding: const EdgeInsets.only(left: 25, top: 25, bottom: 15),
-              child: Row(children: [
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Row(children: const [
                 Text(
                   "Latest Search",
                   style: TextStyle(
@@ -97,6 +108,9 @@ class _SearcHState extends State<SearcH> {
                   ),
                 )
               ])),
+          const SizedBox(
+            height: 15,
+          ),
           latestSearch()
         ],
       ),

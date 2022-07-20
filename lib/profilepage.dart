@@ -1,8 +1,10 @@
-import 'dart:ui';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan_4/settingspage.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:latihan_4/utils/utils.dart';
 
 class Profileview extends StatefulWidget {
   const Profileview({Key? key}) : super(key: key);
@@ -12,6 +14,15 @@ class Profileview extends StatefulWidget {
 }
 
 class _ProfileviewState extends State<Profileview> {
+  Uint8List? _image;
+
+  selectImage() async {
+    Uint8List im = await pickImage(ImageSource.gallery);
+    setState(() {
+      _image = im;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +37,7 @@ class _ProfileviewState extends State<Profileview> {
             color: Colors.black,
           ),
           onTap: () {
-            Get.back();
+            Get.to(const Setting());
           },
         ),
         title: const Text(
@@ -48,16 +59,40 @@ class _ProfileviewState extends State<Profileview> {
           const Divider(),
           Padding(
             padding: const EdgeInsets.all(30),
-            child: Center(
-              child: Container(
-                height: 160,
-                width: 160,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: const DecorationImage(
-                        image: AssetImage('assets/todo.jpg'))),
-              ),
+            child: Stack(
+              children: [
+                _image != null
+                    ? CircleAvatar(
+                        radius: 64,
+                        backgroundImage: MemoryImage(_image!),
+                        backgroundColor: Colors.red,
+                      )
+                    : const CircleAvatar(
+                        radius: 64,
+                        backgroundImage:
+                            NetworkImage('https://i.stack.imgur.com/l60Hf.png'),
+                        backgroundColor: Colors.red,
+                      ),
+                Positioned(
+                  bottom: -10,
+                  left: 80,
+                  child: IconButton(
+                    onPressed: selectImage,
+                    icon: const Icon(Icons.add_a_photo),
+                  ),
+                )
+              ],
             ),
+            // child: Center(
+            //   child: Container(
+            //     height: 160,
+            //     width: 160,
+            //     decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.circular(20),
+            //         image: const DecorationImage(
+            //             image: AssetImage('assets/todo.jpg'))),
+            //   ),
+            // ),
           ),
           const SizedBox(
             height: 17,

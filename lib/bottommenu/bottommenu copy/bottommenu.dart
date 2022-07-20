@@ -22,7 +22,7 @@ class _BottommenuState extends State<Bottommenu> {
     return Scaffold(
       appBar: AppBar(
         shadowColor: Colors.transparent,
-        toolbarHeight: 90,
+        toolbarHeight: 96,
         backgroundColor: Colors.white,
         title: const Text(
           "    AudioBooks.",
