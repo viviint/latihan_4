@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:latihan_4/controller/usercontroller.dart';
 import 'package:latihan_4/forgetpass.dart';
 import 'package:latihan_4/signuppage.dart';
 import 'package:latihan_4/welcomepage.dart';
@@ -13,6 +14,7 @@ class WebLogin extends StatefulWidget {
 }
 
 class _WebLoginState extends State<WebLogin> {
+  final usermodel = Get.put(UserController());
   final _formKey = GlobalKey<FormState>();
   bool check = false;
   late PageController pageController;
@@ -78,6 +80,8 @@ class _WebLoginState extends State<WebLogin> {
                       return "must be filled";
                     } else if (value != "vivi@gmail.com") {
                       return "wrong email ";
+                    } else {
+                      usermodel.user.email = value;
                     }
                     return null;
                   },

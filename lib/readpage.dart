@@ -3,15 +3,15 @@ import 'package:get/get.dart';
 import 'package:latihan_4/detailpage.dart';
 import 'package:latihan_4/model/booksmodel.dart';
 
-class ReaD extends StatefulWidget {
+class ReadPage extends StatefulWidget {
   BooksModel detail;
-  ReaD({Key? key, required this.detail}) : super(key: key);
+  ReadPage({Key? key, required this.detail}) : super(key: key);
 
   @override
-  State<ReaD> createState() => _ReaDState();
+  State<ReadPage> createState() => _ReadPageState();
 }
 
-class _ReaDState extends State<ReaD> {
+class _ReadPageState extends State<ReadPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _ReaDState extends State<ReaD> {
               color: Colors.black,
             ),
             onTap: () {
-              Get.to(Detail(idBook: widget.detail.id));
+              Get.offAll(DetailPage(idBook: widget.detail.id));
             }),
       ),
       body: Padding(

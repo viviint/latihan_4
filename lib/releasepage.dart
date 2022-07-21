@@ -48,7 +48,7 @@ class _ReleaSeState extends State<ReleaSe> {
                 itemBuilder: (context, index) {
                   BooksModel booksModel = BooksModel.booksmodel[index];
                   return GestureDetector(
-                      onTap: () => Get.to(Detail(idBook: hashCode)),
+                      onTap: () => Get.to(DetailPage(idBook: hashCode)),
                       child: Container(
                         child: Column(
                           children: [

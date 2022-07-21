@@ -30,7 +30,7 @@ class TrendingNow extends StatelessWidget {
         ],
       ),
       onTap: () {
-        Get.to(Detail(idBook: infoo.hashCode));
+        Get.to(DetailPage(idBook: infoo.hashCode));
       },
     );
   }

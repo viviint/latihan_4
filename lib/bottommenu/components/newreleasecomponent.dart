@@ -30,7 +30,7 @@ class NewRelease extends StatelessWidget {
         ],
       ),
       onTap: () {
-        Get.to(Detail(idBook: infoo.id));
+        Get.to(DetailPage(idBook: infoo.id));
       },
     );
   }

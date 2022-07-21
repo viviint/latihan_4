@@ -147,8 +147,8 @@ class _OneState extends State<One> {
                                   BooksModel booksModel =
                                       BooksModel.booksmodel[index];
                                   return GestureDetector(
-                                    onTap: () =>
-                                        Get.to(Detail(idBook: booksModel.id)),
+                                    onTap: () => Get.to(
+                                        DetailPage(idBook: booksModel.id)),
                                     child: Container(
                                       height: 100,
                                       width: 195,

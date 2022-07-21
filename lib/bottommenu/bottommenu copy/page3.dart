@@ -54,7 +54,7 @@ class _LibraryState extends State<Library> {
                   itemBuilder: (context, index) {
                     BooksModel booksModel = BooksModel.booksmodel[index];
                     return GestureDetector(
-                      onTap: () => Get.to(Detail(idBook: booksModel.id)),
+                      onTap: () => Get.to(DetailPage(idBook: booksModel.id)),
                       child: Card(
                         margin: EdgeInsets.symmetric(horizontal: 25),
                         shadowColor: Colors.transparent,

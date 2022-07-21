@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/introduction", page: () => Home()),
         GetPage(name: "/loginn", page: () => WebLogin())
       ],
-      home: Splash(),
+      home: Bottommenu(),
       // routes: {Detail.nameRoute :(context) => Detail()},
     );
   }

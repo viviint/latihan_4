@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:latihan_4/bottommenu/bottommenu%20copy/bottommenu.dart';
-import 'package:latihan_4/controller/bookscontroller.dart';
 import 'package:latihan_4/model/booksmodel.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:latihan_4/readpage.dart';
 import 'package:latihan_4/widget/genreselect.dart';
 
-class Detail extends StatelessWidget {
+class DetailPage extends StatelessWidget {
   int idBook;
 
-  Detail({Key? key, required this.idBook}) : super(key: key);
+  DetailPage({Key? key, required this.idBook}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +46,9 @@ class Detail extends StatelessWidget {
             height: 17,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   "${selectedData.title}",
@@ -67,74 +64,61 @@ class Detail extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 7,
-          ),
-          Center(
-            child: RatingBar.builder(
-              initialRating: selectedData.rating,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemBuilder: (context, _) => Icon(
-                Icons.star,
-                color: Colors.amber,
-              ),
-              onRatingUpdate: (rating) {
-                print(rating);
-              },
-            ),
-          ),
           Padding(
-            padding: const EdgeInsets.only(top: 15, bottom: 15, left: 25),
-            child: Row(
-              children: [
-                Container(
-                  height: 45,
-                  width: 350,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: selectedData.genre.length,
-                      itemBuilder: (context, index) =>
-                          BooksSelect(genreselect: selectedData.genre[index])),
+            padding: const EdgeInsets.symmetric(vertical: 15),
+            child: Center(
+              child: RatingBar.builder(
+                initialRating: selectedData.rating,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemBuilder: (context, _) => Icon(
+                  Icons.star,
+                  color: Colors.amber,
                 ),
-              ],
+                onRatingUpdate: (rating) {
+                  print(rating);
+                },
+              ),
             ),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 45,
+                width: 350,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: selectedData.genre.length,
+                    itemBuilder: (context, index) =>
+                        BooksSelect(genreselect: selectedData.genre[index])),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 25, right: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: ButtonTheme(
-                  minWidth: 170,
+                  minWidth: 300,
                   height: 70,
                   child: FlatButton(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        side: BorderSide(color: Colors.indigo.shade700)),
-                    color: Colors.indigo.shade700,
-                    textColor: Colors.white,
-                    child: const Text("Play Audio",
-                        style: TextStyle(fontSize: 15)),
-                    onPressed: () {},
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 25),
-                child: ButtonTheme(
-                  minWidth: 170,
-                  height: 70,
-                  child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(10),
                         side: BorderSide(color: Colors.indigo)),
                     color: Colors.white,
                     textColor: Colors.indigo,
-                    child: Text("Read Book", style: TextStyle(fontSize: 15)),
+                    child: Text("Read Book",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
                     onPressed: () {
-                      Get.to(ReaD(detail: selectedData));
+                      Get.to(ReadPage(detail: selectedData));
                     },
                   ),
                 ),

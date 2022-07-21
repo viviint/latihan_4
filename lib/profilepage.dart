@@ -1,7 +1,7 @@
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:latihan_4/controller/usercontroller.dart';
 import 'package:latihan_4/settingspage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:latihan_4/utils/utils.dart';
@@ -14,6 +14,7 @@ class Profileview extends StatefulWidget {
 }
 
 class _ProfileviewState extends State<Profileview> {
+  final usermodel = Get.find<UserController>();
   Uint8List? _image;
 
   selectImage() async {
@@ -65,14 +66,13 @@ class _ProfileviewState extends State<Profileview> {
                     ? CircleAvatar(
                         radius: 64,
                         backgroundImage: MemoryImage(_image!),
-                        backgroundColor: Colors.red,
+                        backgroundColor: Colors.grey,
                       )
                     : const CircleAvatar(
                         radius: 64,
                         backgroundImage:
                             NetworkImage('https://i.stack.imgur.com/l60Hf.png'),
-                        backgroundColor: Colors.red,
-                      ),
+                        backgroundColor: Colors.grey),
                 Positioned(
                   bottom: -10,
                   left: 80,
@@ -83,16 +83,6 @@ class _ProfileviewState extends State<Profileview> {
                 )
               ],
             ),
-            // child: Center(
-            //   child: Container(
-            //     height: 160,
-            //     width: 160,
-            //     decoration: BoxDecoration(
-            //         borderRadius: BorderRadius.circular(20),
-            //         image: const DecorationImage(
-            //             image: AssetImage('assets/todo.jpg'))),
-            //   ),
-            // ),
           ),
           const SizedBox(
             height: 17,
@@ -134,12 +124,12 @@ class _ProfileviewState extends State<Profileview> {
                   height: 45,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'Email',
                         style: TextStyle(fontWeight: FontWeight.w600),
                       ),
-                      Text('your@gmail.com'),
+                      Text(usermodel.user.email!)
                     ],
                   ),
                 ),

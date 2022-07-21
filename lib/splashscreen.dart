@@ -1,9 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:latihan_4/errorpage.dart';
-import 'package:latihan_4/homepage1.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -14,7 +11,7 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   next() {
-    Future.delayed(Duration(seconds: 4), () async {
+    Future.delayed(const Duration(seconds: 3), () async {
       Get.toNamed("introduction");
     });
   }
@@ -33,7 +30,10 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: Image.asset('assets/circlelogo.png'),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Image.asset('assets/circlelogo.png'),
+      ),
     ));
   }
 }
