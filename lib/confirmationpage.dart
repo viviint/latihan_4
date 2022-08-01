@@ -1,9 +1,5 @@
-import 'dart:developer';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:latihan_4/personalization.dart';
 import 'package:latihan_4/signuppage.dart';
 import 'package:latihan_4/welcomepage.dart';
 
@@ -105,7 +101,7 @@ class _ConfiRState extends State<ConfiR> {
                   child: const Text("Submit", style: TextStyle(fontSize: 15)),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Get.to(Welcome());
+                      Get.to(WelcomePage());
                     }
                   },
                 ),

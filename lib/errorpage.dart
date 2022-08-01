@@ -1,11 +1,7 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan_4/homepage1.dart';
 import 'package:latihan_4/pages/login/web_login.dart';
-
-import 'package:latihan_4/signuppage.dart';
-import 'package:latihan_4/splashscreen.dart';
 
 class ErroR extends StatefulWidget {
   const ErroR({Key? key}) : super(key: key);
@@ -51,13 +47,13 @@ class _ErroRState extends State<ErroR> {
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
                       color: Colors.indigo))),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           const Text(
             "Please chechk your internet connection",
             maxLines: 2,
           ),
           const Text("and try again"),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           ButtonTheme(
             minWidth: 300,
             height: 70,

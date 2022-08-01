@@ -4,15 +4,15 @@ import 'package:latihan_4/controller/category_controller.dart';
 import 'package:latihan_4/readypage.dart';
 import 'package:latihan_4/widget/category_select.dart';
 
-class PersonaL extends StatefulWidget {
+class PersonalPage extends StatefulWidget {
   final catController = Get.put(CategoryController());
-  PersonaL({Key? key}) : super(key: key);
+  PersonalPage({Key? key}) : super(key: key);
 
   @override
-  _PersonaLState createState() => _PersonaLState();
+  _PersonalPageState createState() => _PersonalPageState();
 }
 
-class _PersonaLState extends State<PersonaL> {
+class _PersonalPageState extends State<PersonalPage> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class _PersonaLState extends State<PersonaL> {
               );
             }),
           ),
-          SizedBox(height: 25),
+          const SizedBox(height: 25),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: ButtonTheme(
@@ -101,7 +101,7 @@ class _PersonaLState extends State<PersonaL> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(

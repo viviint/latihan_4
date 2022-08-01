@@ -41,7 +41,7 @@ class _ForgetpasswordState extends State<Forgetpassword> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 11,
             ),
             Padding(
@@ -56,7 +56,7 @@ class _ForgetpasswordState extends State<Forgetpassword> {
                         style: TextStyle(fontSize: 16, color: Colors.black)),
                   ])),
             ),
-            SizedBox(
+            const SizedBox(
               height: 11,
             ),
             Form(

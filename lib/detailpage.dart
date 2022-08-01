@@ -42,7 +42,7 @@ class DetailPage extends StatelessWidget {
               child: Image.network("${selectedData.image}"),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 17,
           ),
           Padding(
@@ -54,7 +54,7 @@ class DetailPage extends StatelessWidget {
                   "${selectedData.title}",
                   style: TextStyle(fontSize: 23, fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 6,
                 ),
                 Text(
@@ -128,7 +128,7 @@ class DetailPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 25, top: 25, bottom: 10),
             child: Row(
-              children: [
+              children: const [
                 Text(
                   'Summary',
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),

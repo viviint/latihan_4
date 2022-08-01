@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:latihan_4/personalization.dart';
 import 'package:latihan_4/readypage.dart';
 
-class Welcome extends StatefulWidget {
-  const Welcome({Key? key}) : super(key: key);
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({Key? key}) : super(key: key);
 
   @override
-  _WelcomeState createState() => _WelcomeState();
+  _WelcomePageState createState() => _WelcomePageState();
 }
 
-class _WelcomeState extends State<Welcome> {
+class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +41,7 @@ class _WelcomeState extends State<Welcome> {
             ],
           ),
           SizedBox(
-            height: 18,
+            height: 15,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 37, right: 100),
@@ -52,23 +52,20 @@ class _WelcomeState extends State<Welcome> {
                   TextSpan(
                       text: "Find what",
                       style: TextStyle(
-                          fontSize: 47,
+                          fontSize: 50,
                           fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.normal,
                           color: Colors.indigo)),
                   TextSpan(
                       text: " you are",
                       style: TextStyle(
-                          fontSize: 47,
+                          fontSize: 50,
                           fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.normal,
                           color: Colors.indigo)),
                   TextSpan(
                       text: " looking for",
                       style: TextStyle(
-                          fontSize: 47,
+                          fontSize: 50,
                           fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.normal,
                           color: Colors.indigo)),
                 ])),
           ),
@@ -76,7 +73,7 @@ class _WelcomeState extends State<Welcome> {
             height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 37),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -86,19 +83,19 @@ class _WelcomeState extends State<Welcome> {
                     text: const TextSpan(children: [
                       TextSpan(
                           text: "By personalize your account,we can",
-                          style: TextStyle(fontSize: 15, color: Colors.black)),
+                          style: TextStyle(color: Colors.black)),
                       TextSpan(
                           text: " help you to find what you like.",
-                          style: TextStyle(fontSize: 15, color: Colors.black)),
+                          style: TextStyle(color: Colors.black)),
                     ])),
               ],
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 22,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30, bottom: 14),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: ButtonTheme(
               minWidth: 500,
               height: 70,
@@ -114,14 +111,17 @@ class _WelcomeState extends State<Welcome> {
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   {
-                    Get.to(PersonaL());
+                    Get.to(PersonalPage());
                   }
                 },
               ),
             ),
           ),
+          const SizedBox(
+            height: 18,
+          ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30, bottom: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: ButtonTheme(
               minWidth: 500,
               height: 70,
@@ -137,7 +137,7 @@ class _WelcomeState extends State<Welcome> {
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   {
-                    Get.to(Ready());
+                    Get.to(const Ready());
                   }
                 },
               ),

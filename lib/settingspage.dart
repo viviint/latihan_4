@@ -41,7 +41,7 @@ class _SettingState extends State<Setting> {
                 child: Container(
                   width: 95,
                   height: 95,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
                         image: AssetImage('assets/todo.jpg'),
@@ -121,14 +121,14 @@ class _SettingState extends State<Setting> {
             color: Colors.grey[100],
           ),
           Row(
-            children: [
+            children: const [
               Padding(
-                padding: const EdgeInsets.all(25),
+                padding: EdgeInsets.all(25),
                 child: Text('About Audiobooks'),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 17,
           ),
           ButtonTheme(

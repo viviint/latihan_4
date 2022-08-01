@@ -36,7 +36,7 @@ class _SentState extends State<Sent> {
             )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 11,
         ),
         Padding(
@@ -59,7 +59,7 @@ class _SentState extends State<Sent> {
                     style: TextStyle(fontSize: 15, color: Colors.black))
               ])),
         ),
-        SizedBox(
+        const SizedBox(
           height: 11,
         ),
         Padding(
@@ -77,7 +77,7 @@ class _SentState extends State<Sent> {
               child: const Text("Close",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               onPressed: () {
-                Get.to(Welcome());
+                Get.to(WelcomePage());
               },
             ),
           ),

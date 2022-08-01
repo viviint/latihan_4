@@ -131,7 +131,7 @@ class _WebLoginState extends State<WebLogin> {
                     child: const Text("Login", style: TextStyle(fontSize: 20)),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Get.offAll(Welcome());
+                        Get.offAll(WelcomePage());
                       }
                     },
                   ),

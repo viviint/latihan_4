@@ -5,6 +5,7 @@ import 'package:latihan_4/bottommenu/bottommenu%20copy/page1.dart';
 import 'package:latihan_4/bottommenu/bottommenu%20copy/page2.dart';
 import 'package:latihan_4/bottommenu/bottommenu%20copy/page3.dart';
 import 'package:latihan_4/confirmationpage.dart';
+import 'package:latihan_4/controller/usercontroller.dart';
 import 'package:latihan_4/detailpage.dart';
 import 'package:latihan_4/errorpage.dart';
 import 'package:latihan_4/homepage1.dart';
@@ -15,6 +16,7 @@ import 'package:latihan_4/releasepage.dart';
 import 'package:latihan_4/settingspage.dart';
 import 'package:latihan_4/signuppage.dart';
 import 'package:latihan_4/splashscreen.dart';
+import 'package:latihan_4/welcomepage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _userController = Get.put(UserController());
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/introduction", page: () => Home()),
         GetPage(name: "/loginn", page: () => WebLogin())
       ],
-      home: Bottommenu(),
+      home: Splash(),
       // routes: {Detail.nameRoute :(context) => Detail()},
     );
   }
